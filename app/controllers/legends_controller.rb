@@ -1,8 +1,16 @@
-def show
-end
+class LegendsController < ApplicationController
+  before_action :set_legend, only: [:show]
 
-private
+  def index
+    @legends = Legend.all
+  end
 
-def set_params
-  @legend = Legend.find(params[:id])
+  def show
+  end
+
+  private
+
+  def set_legend
+    @legend = Legend.find(params[:id])
+  end
 end
