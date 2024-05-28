@@ -1,5 +1,8 @@
 <ul>
-  <% @restaurants.each do |restaurant| %>
-    <li><%= restaurant.name %></li>
+  <% @legends.each do |legend| %>
+    <li><%= legend.name %></li>
+    <li><%= legend.category %></li>
+    <li><%= legend.description %></li>
+    <li><%= legend.price %></li>
   <% end %>
 </ul>
