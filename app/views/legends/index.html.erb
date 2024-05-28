@@ -1,6 +1,8 @@
 <ul>
   <% @legends.each do |legend| %>
-    <li><%= legend.name %></li>
+    <li>
+      <%= link_to legend.name, legend_path(legend) %>
+    </li>
     <li><%= legend.category %></li>
     <li><%= legend.description %></li>
     <li><%= legend.price %></li>
