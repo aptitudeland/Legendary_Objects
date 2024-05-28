@@ -13,12 +13,3 @@
     <%%= f.button :submit %>
   </div>
 <%% end %>
-
-
-<%= simple_form_for(legend) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <% categories = ['Armes', 'Vêtements-Chaussures', 'Bijoux & accessoires ', 'Moyen de transport'] %>
-  <%= f.input :category, as: :select, collection: categories %>
-<% end %>
