@@ -1,7 +1,7 @@
 class LegendsController < ApplicationController
 
   def index
-    @legend = legend.all
+    @legends = Legend.all
   end
 
 end
