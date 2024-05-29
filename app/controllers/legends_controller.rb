@@ -25,10 +25,6 @@ class LegendsController < ApplicationController
     end
   end
 
-
-
-
-
   def destroy
     @legend = Legend.find(params[:id])
     @legend.destroy
