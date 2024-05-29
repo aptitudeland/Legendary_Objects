@@ -6,7 +6,6 @@
 <p><%= @legend.category %></p>
 </div>
 
-
 <div>
 <h3>Book this legend</h3>
 <%= simple_form_for @reservation do |f| %>
@@ -21,3 +20,8 @@
   </div>
 <% end %>
   </div>
+
+<p><%= link_to "Delete",
+legend_path(@legend),
+data: {turbo_method: :delete, turbo_confirm: "Are you really really really sure ????"}
+ %> </p>
