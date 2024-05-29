@@ -7,6 +7,8 @@ class LegendsController < ApplicationController
   end
 
   def show
+    @legend = Legend.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def new
