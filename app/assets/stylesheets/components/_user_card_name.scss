@@ -1,10 +1,16 @@
 
 
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  display: flex;
+  contain: size;
+  text-shadow: 0 0 10px;
   border-radius: 20px;
+  overflow: hidden;
+  height: 120px;
+  background: #ff6666;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
 }
 
 // Smallest device
