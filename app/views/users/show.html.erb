@@ -1,3 +1,24 @@
+<div class= "user details">
+<h1><%= @user.first_name %></h1>
+<h1><%= @user.last_name %></h1>
+</div>
 
-<h2><%= @user.firt_name %></h2>
-<h2><%= @user.last_name %></h2>
+<ul>
+  <% @legends.each do |legend| %>
+    <li>
+      <h4>OBJET : <%= legend.name %></h4>
+      <p>DESCRIPTION : <%= legend.description %></p>
+      <p>CATEGORIE : <%= legend.category %></p>
+      <p>PRICE : <%= legend.price %>€</p>
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @reservations.each do |reservation| %>
+    <li>
+      <h4><%= reservation.starting_date %></h4>
+      <p><%= reservation.ending_date %></p>
+    </li>
+  <% end %>
+</ul>
