@@ -3,9 +3,10 @@
 <h1><%= @user.last_name %></h1>
 </div>
 
+<h1 class= "card-category"><%= "MES OBJETS DE LEGENDE" %></h1>
 <div class= "cards-container">
   <% @legends.each do |legend| %>
-    <div class= "cards">
+    <div class= "card-product">
     <%# IMAGE A AJOUTER %>
       <h4>OBJET : <%= legend.name %></h4>
       <p>DESCRIPTION : <%= legend.description %></p>
@@ -15,13 +16,13 @@
   <% end %>
 </div>
 
-<h1><%= "MES RESERVATIONS" %></h1>
-<ul>
+<h1 class= "card-category"><%= "MES RESERVATIONS" %></h1>
+<div class= "cards-container">
   <% @reservations.each do |reservation| %>
-    <li>
+    <div class= "card-product">
       <h4><%= reservation.legend.name %> (Propriétaire : <%= reservation.legend.user.first_name %> <%= reservation.legend.user.last_name %>)</h4>
       <p> date de <%= reservation.starting_date %></p>
       <p><%= reservation.ending_date %></p>
-    </li>
+    </div>
   <% end %>
-</ul>
+</div>
