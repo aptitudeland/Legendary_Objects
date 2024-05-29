@@ -9,9 +9,22 @@ class LegendsController < ApplicationController
   def show
   end
 
+  def new
+    @legend = Legend.new
+  end
+
+  def create
+    @legend = Legend.new(params[:legend])
+    @legend.save
+  end
+
   private
 
   def set_legend
     @legend = Legend.find(params[:id])
+  end
+
+  def legend_params
+    params.require(:legend).permit(:name, :description, :category, :price)
   end
 end
