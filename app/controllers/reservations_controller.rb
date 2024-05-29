@@ -1,6 +1,10 @@
 class ReservationsController < ApplicationController
   skip_before_action :authenticate_user!
 
+  def index
+    @reservations = Reservation.all
+  end
+
   def new
     @reservation = Reservation.new()
   end
@@ -14,9 +18,10 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
 
     if @reservation.save
-      redirect_to @reservation, notice: 'Reservation was successfully created.'
+      redirect_to @reservation.legend, notice: 'Reservation was successfully created.'
     else
-      render :new
+      @legend = @reservation.legend
+      render 'legends/show'
     end
   end
 
@@ -26,3 +31,4 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:starting_date, :ending_date, :legend_id)
   end
 end
+

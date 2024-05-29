@@ -1,6 +1,23 @@
+<%= link_to "Back to the list", legends_path %>
+<div>
 <h2><%= @legend.name %></h2>
 <p><%= @legend.description %></p>
 <p><%= @legend.price %></p>
 <p><%= @legend.category %></p>
+</div>
 
-<%= link_to "Back to the list", legends_path %>
+
+<div>
+<h3>Book this legend</h3>
+<%= simple_form_for @reservation do |f| %>
+  <div class="form-inputs">
+    <%= f.input :starting_date, as: :string, input_html: { type: 'date' } %>
+    <%= f.input :ending_date, as: :string, input_html: { type: 'date' } %>
+    <%= f.hidden_field :legend_id, value: @legend.id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Book !" %>
+  </div>
+<% end %>
+  </div>
