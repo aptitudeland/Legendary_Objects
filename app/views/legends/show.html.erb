@@ -1,5 +1,8 @@
 <%= link_to "Back to the list", legends_path %>
 <div>
+<% @legend.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <h2><%= @legend.name %></h2>
 <p><%= @legend.description %></p>
 <p><%= @legend.price %>€/jour</p>
