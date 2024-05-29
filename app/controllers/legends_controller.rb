@@ -18,6 +18,12 @@ class LegendsController < ApplicationController
     @legend.save
   end
 
+  def destroy
+    @legend = Legend.find(params[:id])
+    @legend.destroy
+    redirect_to legends_path, status: :see_other
+  end
+
   private
 
   def set_legend

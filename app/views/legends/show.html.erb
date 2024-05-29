@@ -2,3 +2,8 @@
 <p><%= @legend.description %></p>
 <p><%= @legend.price %></p>
 <p><%= @legend.category %></p>
+
+<p><%= link_to "Delete",
+legend_path(@legend),
+data: {turbo_method: :delete, turbo_confirm: "Are you really really really sure ????"}
+ %> </p>
