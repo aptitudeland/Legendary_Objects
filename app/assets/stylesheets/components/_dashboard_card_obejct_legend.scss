@@ -1,0 +1,51 @@
+// j'ai utlisé le kitt UI du wagon card product, il faut completer avec HTML
+// ajuster la taille comme sur la page dashboard du figma et en aligner 3 ou 4 pour faire une liste de card product
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #ffd166;
+  transition: background 0.3s ease;
+  border: 1px solid #ffd166;
+}
+
+.btn-gradient:hover {
+  background: #ffd166;
+  color: white;
+}
