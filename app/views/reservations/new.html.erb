@@ -1,0 +1,11 @@
+<%= simple_form_for @reservation do |f| %>
+    <div class="form-inputs">
+    <%= f.input :starting_date, as: :string, input_html: { type: 'date' } %>
+    <%= f.input :ending_date, as: :string, input_html: { type: 'date' } %>
+    <%= f.input :legend_id, collection: Legend.all.pluck(:name, :id), prompt: "Select a legend" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
