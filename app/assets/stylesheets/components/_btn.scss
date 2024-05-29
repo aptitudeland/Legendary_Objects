@@ -1,0 +1,17 @@
+// j'ai utlisé le kitt UI du wagon btn, il faut completer avec HTML et ERB
+// il doit etre adapté a lendroit ou on doit le mettre
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #ffd166;
+  transition: background 0.3s ease;
+  border: 1px solid #ffd166;
+}
+
+.btn-gradient:hover {
+  background: #ffd166;
+  color: white;
+}
