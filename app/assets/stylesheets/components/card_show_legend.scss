@@ -1,0 +1,48 @@
+.cards_3{
+  display: flex;
+  contain: size;
+  text-shadow: 0 0 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 650px;
+  height: 500px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 150px;
+}
+
+.cards_2 {
+  overflow: hidden;
+  width: 950PX;
+  height: 375PX;
+  float: left;
+  margin-left: 150px;
+  margin-top: 30px;
+}
+
+.card-2 h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #031882
+}
+
+.cards_2 p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  color: #031882
+
+}
+
+.card_2 .card_2_trips {
+  padding: 25PX;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  // width: 85%;
+  // margin-left: 15px;
+}
