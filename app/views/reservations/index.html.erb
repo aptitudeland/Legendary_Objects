@@ -1,0 +1,16 @@
+<h2>Reservations Index</h2>
+
+<ul>
+  <% @reservations.each do |reservation| %>
+    <li> ID:
+      <%= link_to reservation.id, reservation_path(reservation) %>
+    </li>
+    <p>
+    <%= reservation.legend.name %><br>
+    <%= reservation.user.first_name %> <br>
+    <%= reservation.user.last_name %> <br>
+    <%= reservation.starting_date %><br>
+    <%= reservation.ending_date %><br>
+    </p>
+  <% end %>
+</ul>
