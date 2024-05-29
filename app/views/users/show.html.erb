@@ -1,18 +1,19 @@
-<div class= "user details">
+<div class= "card-product">
 <h1><%= @user.first_name %></h1>
 <h1><%= @user.last_name %></h1>
 </div>
 
-<ul>
+<div class= "cards-container">
   <% @legends.each do |legend| %>
-    <li>
+    <div class= "cards">
+    <%# IMAGE A AJOUTER %>
       <h4>OBJET : <%= legend.name %></h4>
       <p>DESCRIPTION : <%= legend.description %></p>
       <p>CATEGORIE : <%= legend.category %></p>
       <p>PRICE : <%= legend.price %>€</p>
-    </li>
+    </div>
   <% end %>
-</ul>
+</div>
 
 <ul>
   <% @reservations.each do |reservation| %>
