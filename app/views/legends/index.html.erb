@@ -1,5 +1,6 @@
 <ul>
   <% @legends.each do |legend| %>
+  <%= render "shared/search_bar" %>
     <div class="card">
       <li>
         <%= link_to legend.name, legend_path(legend) %>
