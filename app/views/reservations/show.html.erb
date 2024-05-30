@@ -1,10 +1,20 @@
 <h2>Reservation Show <%= @reservation.id %></h2>
 <div>
-<ul>
-  <li><%= @reservation.legend.name %></li>
-  <li><%= @reservation.user.first_name %></li>
-  <li><%= @reservation.user.last_name %></li>
-  <li><%= @reservation.starting_date %></li>
-  <li><%= @reservation.ending_date %></li>
-</ul>
+  <ul>
+    <li>Nom de l'objet: <strong><%= @reservation.legend.name %></strong></li>
+    <li>Prenom du locataire <strong><%= @reservation.user.first_name %></strong></strong></strong></strong></li>
+    <li>Nom du locataire: <strong><%= @reservation.user.last_name %></strong></strong></strong></li>
+    <li>Debut de la reservation: <strong><%= @reservation.starting_date %></strong></strong></li>
+    <li>Fin de la reservation: <strong><%= @reservation.ending_date %></strong></li>
+    <li>
+      <%= simple_form_for @reservation, url: update_status_reservation_path(@reservation), method: :patch, html: { id: 'status_form' } do |f| %>
+        <div class="form-group" style="width: 150px">
+          <%= f.input :status, collection: Reservation.statuses.keys.map { |status| [status.humanize, status] }, include_blank: false, selected: @reservation.status, input_html: { onchange: 'this.form.submit();' } %>
+        </div>
+      <% end %>
+    </li>
+    <li>
+       <%= link_to "Destroy", @reservation, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    </li>
+  </ul>
 </div>
