@@ -1,9 +1,11 @@
 require "csv"
+require "open-uri"
 
 filepath = "db/objects.csv"
 
 Legend.destroy_all
 User.destroy_all
+Reservation.destroy_all
 
 user = User.new(first_name: "admin", last_name: "admin", email: "admin@site.com", password: "000000")
 user.save!
@@ -18,11 +20,20 @@ objects = []
 
 CSV.foreach(filepath, headers: :first_row) do |row|
   legend = Legend.new(name: row['name'], category: row['category'], description: row['description'], price: row['price'], user: User.all.sample)
-  legend.save
+  if legend.save
+    begin
+      file1 = URI.open(row['url1']) if row['url1'].present?
+      file2 = URI.open(row['url2']) if row['url2'].present?
+
+      legend.photos.attach(io: file1, filename: File.basename(row['url1']), content_type: "image/png") if file1.present?
+      # legend.photos.attach(io: file2, filename: File.basename(row['url2']), content_type: "image/png") if file2.present?
+    rescue OpenURI::HTTPError => e
+      puts "Failed to open URL: #{e.message}"
+    end
+  else
+    puts "Failed to save legend: #{legend.errors.full_messages.join(', ')}"
+  end
 end
-
-
-
 
 # Legend.destroy_all
 

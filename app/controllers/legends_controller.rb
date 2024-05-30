@@ -16,9 +16,18 @@ class LegendsController < ApplicationController
   end
 
   def create
-    @legend = Legend.new(params[:legend])
-    @legend.save
+    @legend = Legend.new(legend_params)
+    @legend.user = current_user
+    if @legend.save
+      redirect_to @legend, notice: 'Legend was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
+
+
+
+
 
   def destroy
     @legend = Legend.find(params[:id])
@@ -33,6 +42,6 @@ class LegendsController < ApplicationController
   end
 
   def legend_params
-    params.require(:legend).permit(:name, :description, :category, :price)
+    params.require(:legend).permit(:name, :description, :category, :price, photos: [])
   end
 end
