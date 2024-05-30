@@ -13,3 +13,112 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.card-legends-dashboard {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 1.5em;
+  margin-right: 20px;
+  text-decoration: none;
+  color: inherit;
+
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit:cover;
+    border: 1px solid #cecece;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .card-legends-index-infos {
+    padding: 16px;
+  }
+
+  .card-legends-index a:hover {
+    color: #000; /* Optionally, change color on hover */
+  }
+
+  .card-legends-index a:visited {
+    color: inherit; /* Keep the original color when visited */
+  }
+
+  .card-legends-index:hover {
+    background-color: #f0f0f0; /* or any highlight color */
+  }
+}
+
+.card-resa-dashboard {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-top: 1.5em;
+  text-decoration: none;
+  color: inherit;
+
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit:cover;
+    border: 1px solid #cecece;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .card-legends-index-infos {
+    padding: 16px;
+  }
+
+  .card-legends-index a:hover {
+    color: #000; /* Optionally, change color on hover */
+  }
+
+  .card-legends-index a:visited {
+    color: inherit; /* Keep the original color when visited */
+  }
+
+  .card-legends-index:hover {
+    background-color: #f0f0f0; /* or any highlight color */
+  }
+}
+
+.proprio-legends {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-dash {
+  display: flex;
+  flex-direction: column;
+}

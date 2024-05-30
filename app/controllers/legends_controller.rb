@@ -28,7 +28,7 @@ class LegendsController < ApplicationController
   def destroy
     @legend = Legend.find(params[:id])
     @legend.destroy
-    redirect_to legends_path, status: :see_other
+    redirect_to user_path(current_user), status: :see_other
   end
 
   private

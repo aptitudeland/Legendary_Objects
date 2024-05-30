@@ -1,28 +1,88 @@
-<div class= "cards">
-<h1><%= @user.first_name %></h1>
-<h1><%= @user.last_name %></h1>
+<div class= "card-category header-dash">
+  <h1><%= @user.first_name.capitalize %> <%= @user.last_name.upcase %></h1>
+  <h2></h2>
+  <h3><%= @user.email %></h3>
 </div>
 
-<h1 class= "card-category"><%= "MES OBJETS DE LEGENDE" %></h1>
-<div class= "cards-container">
-  <% @legends.each do |legend| %>
-    <div class= "card-product">
-    <%# IMAGE A AJOUTER %>
-      <h4>OBJET : <%= legend.name %></h4>
-      <p>DESCRIPTION : <%= legend.description %></p>
-      <p>CATEGORIE : <%= legend.category %></p>
-      <p>PRICE : <%= legend.price %>€</p>
+  <h1><%= "MES OBJETS DE LEGENDE" %></h1>
+
+  <div class="proprio-legends">
+
+    <div>
+      <% @legends.each do |legend| %>
+        <div class= "cards-legend-container">
+          <div>
+            <%= link_to legend_path(legend), class: "card-legends-dashboard" do %>
+              <%= cl_image_tag legend.photos.last.key, height: 300, width: 400, crop: :fill %>
+              <div class= "card-legends-index-infos">
+                <h2><%= legend.name %></h2>
+                <p>
+                  <%= legend.category %> <br>
+                  <%= legend.description %>
+                  <%= legend.price %> €/jour
+                </p>
+              </div>
+            <% end %>
+            <div class="btn-delete-dashboard">
+              <%= link_to legend_path(legend), data: {turbo_method: :delete, turbo_confirm: "Are you really really really sure ????"} do %>
+                <i class="fa-solid fa-trash" style="color: #000000;"></i>
+                Delete
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
 
-<h1 class= "card-category"><%= "MES RESERVATIONS" %></h1>
-<div class= "cards-container">
+    <div>
+            <% @legends.each do |legend| %>
+        <div class= "cards-resa-dashboard">
+          <div>
+            <%= link_to legend_path(legend), class: "card-legends-dashboard" do %>
+              <%= cl_image_tag legend.photos.last.key, height: 300, width: 400, crop: :fill %>
+              <div class= "card-legends-index-infos">
+                <h2><%= legend.name %></h2>
+                <p>
+                  <%= legend.category %> <br>
+                  <%= legend.description %>
+                  <%= legend.price %> €/jour
+                </p>
+              </div>
+            <% end %>
+            <div class="btn-delete-dashboard">
+              <%= link_to legend_path(legend), data: {turbo_method: :delete, turbo_confirm: "Are you really really really sure ????"} do %>
+                <i class="fa-solid fa-trash" style="color: #000000;"></i>
+                Delete
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+<%# @legends.each do |legend|
+legend.reservations.each do |reservation|
+reservation.starting_date
+reservation.ending_date
+reservation.legend.photo.key
+...
+end %>
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+<h2><%= "MES RESERVATIONS" %></h2>
   <% @reservations.each do |reservation| %>
-    <div class= "card-product">
+    <div class= "card-legends-index-infos">
       <h4><%= reservation.legend.name %> (Propriétaire : <%= reservation.legend.user.first_name %> <%= reservation.legend.user.last_name %>)</h4>
       <p> date de <%= reservation.starting_date %></p>
       <p><%= reservation.ending_date %></p>
     </div>
   <% end %>
-</div>
