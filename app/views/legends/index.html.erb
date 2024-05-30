@@ -1,22 +1,21 @@
-<div>
-
-</div>
+<div class="legends-index-main-container">
 <div>
   <%= render "shared/search_bar" %>
 </div>
-
-<div class="cards-legend-container">
+<div class="legends-index-cards-container">
     <% @legends.each do |legend| %>
-    <%= link_to legend_path(legend), class: "card-legends-index" do %>
-      <%= cl_image_tag legend.photos.last.key, height: 300, width: 400, crop: :fill %>
-      <div class="card-legends-index-infos">
+    <%= link_to legend_path(legend), class: "legends-index-card-single" do %>
+      <div class="legends-index-img-div">
+      <%= cl_image_tag legend.photos.last.key, height: 250, width: 250 %>
+      </div>
+      <div class="legends-index-card-single-infos">
         <h2><%= legend.name %></h2>
         <p>
           <%= legend.category %> <br>
-          <%= legend.price %> $/day
+          <%= legend.price %> €/jour
         </p>
       </div>
-      <br>
     <% end %>
   <% end %>
+</div>
 </div>
