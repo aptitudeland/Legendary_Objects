@@ -15,7 +15,26 @@
   background: #ffd166;
   color: white;
 }
-.btn-home {
-  color: #ffd166;
-  margin-top: 10px;
+
+.btn-delete-dashboard {
+  display: flex;
+  justify-content: center;
+  background-color: antiquewhite;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-right: 20px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+
+a {
+  text-decoration: none;
+  .btn-home {
+    color: #ffd166;
+    margin-top: 10px;
+  }
 }
