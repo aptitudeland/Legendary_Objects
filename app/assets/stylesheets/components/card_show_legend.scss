@@ -6,35 +6,38 @@
   overflow: hidden;
   width: 650px;
   height: 500px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px #ffd166;
   display: flex;
   align-items: center;
   margin-top: 30px;
-  margin-left: 150px;
+  margin-left: 280px;
 }
 
 .cards_2 {
   overflow: hidden;
-  width: 950PX;
-  height: 375PX;
+  width: 800PX;
+  height: 255PX;
   float: left;
-  margin-left: 150px;
-  margin-top: 30px;
+  margin-left: 275px;
+  margin-top: 40px;
 }
 
-.card-2 h2 {
-  font-size: 16px;
+  .cards_2 h2 {
+  font-size: 3rem;
   font-weight: bold;
   margin: 0;
-  color: #031882
+  color: #031882;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
 .cards_2 p {
-  font-size: 12px;
+  font-size:20px;
   opacity: .7;
   margin: 0;
   color: #031882
-
+  // padding-top: 48px;
+  // padding-bottom: 48px;
 }
 
 .card_2 .card_2_trips {
@@ -45,4 +48,8 @@
   position: relative;
   // width: 85%;
   // margin-left: 15px;
+}
+
+.main-container {
+  display: flex;
 }
