@@ -34,43 +34,20 @@
       <% end %>
     </div>
 
-    <div>
-            <% @legends.each do |legend| %>
-        <div class= "cards-resa-dashboard">
-          <div>
-            <%= link_to legend_path(legend), class: "card-legends-dashboard" do %>
-              <%= cl_image_tag legend.photos.last.key, height: 300, width: 400, crop: :fill %>
-              <div class= "card-legends-index-infos">
-                <h2><%= legend.name %></h2>
-                <p>
-                  <%= legend.category %> <br>
-                  <%= legend.description %>
-                  <%= legend.price %> €/jour
-                </p>
+      <div class= "cards-resa-dashboard">
+        <div class="cards-resa-dashboard-infos">
+          <% @legends.each do |legend| %>
+            <% legend.reservations.each do |reservation| %>
+              <%= cl_image_tag reservation.legend.photos.last.key %>
+              <div>
+                <p><%= reservation.legend.name %></p>
+                <p>Du <%= reservation.starting_date %> Au <%= reservation.ending_date %></p>
+                <p><%= reservation.status %></p>
               </div>
             <% end %>
-            <div class="btn-delete-dashboard">
-              <%= link_to legend_path(legend), data: {turbo_method: :delete, turbo_confirm: "Are you really really really sure ????"} do %>
-                <i class="fa-solid fa-trash" style="color: #000000;"></i>
-                Delete
-              <% end %>
-            </div>
-          </div>
+          <% end %>
         </div>
-      <% end %>
-
-<%# @legends.each do |legend|
-legend.reservations.each do |reservation|
-reservation.starting_date
-reservation.ending_date
-reservation.legend.photo.key
-reservation.status
-...
-end %>
-
-
-    </div>
-
+      </div>
   </div>
 
 

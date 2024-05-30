@@ -122,3 +122,22 @@
   display: flex;
   flex-direction: column;
 }
+
+.cards-resa-dashboard-infos{
+  display: flex;
+
+  img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+
+  p {
+    margin: 0px
+  }
+
+  :nth-child(-n + 3) {
+    display: flex;
+    flex-direction: column;
+  }
+}
