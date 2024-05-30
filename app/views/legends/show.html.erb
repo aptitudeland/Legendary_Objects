@@ -17,31 +17,58 @@
         <hr>
         <p><%= @legend.category %></p>
       </div>
-    </div>
-  </div>
-
-
-  <%# coller un stickit dessus afni quelle suive le mouvement de la page %>
-    <div class="card-trip" data-controller="total-resa" data-price = "<%=@legend.price %>">
-      <div class="card-trip-infos">
-        <%= simple_form_for @reservation do |f| %>
-          <div class="form-inputs">
-            <h2>Book this legend</h2>
-            <%= f.input :starting_date,html5:true, input_html: {data:{total_resa_target:"start",action:"input->total-resa#calculate"} } %>
-            <%= f.input :ending_date,html5:true, input_html: {data:{total_resa_target:"end",action:"input->total-resa#calculate"} } %>
-            <%= f.hidden_field :legend_id, value: @legend.id %>
-        <p data-total-resa-target="total"></p><br>
-          </div>
-            <div class="form-actions" id="btn-gradient">
-            <%= f.button :submit, "Book !" %>
-          </div>
-          <div id="warning">Attention : l’app n’est pas responsable juridiquement en cas de destruction d’immeuble ou de l’univers.  </div>
+      <%= link_to "Back to the list", legends_path %>
+      <div>
+        <% @legend.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
-      </div>
+        <h2><%= @legend.name %></h2>
+        <p><%= @legend.description %></p>
+        <p><%= @legend.price %>€/jour</p>
+        <p><%= @legend.category %></p>
       </div>
     </div>
+<%# voir si on fait la navbar %>
 
-</div>
+<%# faire la barre de recherche %>
+
+    <div>
+      <div class="cards_3">
+        <img src="" alt="">
+      </div>
+      <%# completer avec la photo et ajuster sur card_show_legend %>
+
+      <div class="cards_2">
+        <div class="cards_2_trips">
+          <h2><%= @legend.name %></h2>
+          <p><%= @legend.description %></p>
+          <p><%= @legend.price %>€/jour</p>
+          <p><%= @legend.category %></p>
+        </div>
+      </div>
+
+
+      <%# coller un stickit dessus afni quelle suive le mouvement de la page %>
+      <div class="card-trip" data-controller="total-resa" data-price = "<%=@legend.price %>">
+        <div class="card-trip-infos">
+          <%= simple_form_for @reservation do |f| %>
+            <div class="form-inputs">
+              <h2>Book this legend</h2>
+              <%= f.input :starting_date,html5:true, input_html: {data:{total_resa_target:"start",action:"input->total-resa#calculate"} } %>
+              <%= f.input :ending_date,html5:true, input_html: {data:{total_resa_target:"end",action:"input->total-resa#calculate"} } %>
+              <%= f.hidden_field :legend_id, value: @legend.id %>
+          <p data-total-resa-target="total"></p><br>
+            </div>
+              <div class="form-actions" id="btn-gradient">
+              <%= f.button :submit, "Book !" %>
+            </div>
+            <div id="warning">Attention : l’app n’est pas responsable juridiquement en cas de destruction d’immeuble ou de l’univers.  </div>
+          <% end %>
+        </div>
+        </div>
+      </div>
+
+    </div>
 
 <%# voir ce que vont devenir le bouton delete et le bouton retour %>
 <%# <%= link_to "Back to the list", legends_path %>
@@ -49,3 +76,5 @@
 <%# legend_path(@legend), %>
 <%# data: {turbo_method: :delete, turbo_confirm: "Are you really really really sure ????"} %>
  <%# </p> %>
+  </div>
+</div>
