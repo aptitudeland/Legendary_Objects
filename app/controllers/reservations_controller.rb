@@ -39,20 +39,6 @@ class ReservationsController < ApplicationController
     redirect_back(fallback_location: @reservation.legend)
   end
 
-  def destroy
-    # NE FONCTIONNE PAS
-    puts "start destroying"
-    @reservation = Reservation.find(params[:id])
-    puts @reservation
-    if @reservation.destroy
-      flash[:notice] = "La réservation a été supprimée avec succès."
-    else
-      flash[:alert] = "Une erreur est survenue lors de la suppression de la réservation."
-    end
-    redirect_to reservations_path # Redirection vers l'index des réservations
-  end
-
-
   private
 
   def reservation_params
