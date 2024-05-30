@@ -4,5 +4,6 @@
   <%= f.input :price %>
   <% categories = ['Armes', 'Vêtements-Chaussures', 'Bijoux & accessoires ', 'Moyen de transport'] %>
   <%= f.input :category, as: :select, collection: categories %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
 <% end %>

@@ -31,4 +31,3 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:starting_date, :ending_date, :legend_id)
   end
 end
-
