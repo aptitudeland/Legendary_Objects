@@ -1,54 +1,32 @@
-
 <div class="main-container">
-  <div>
+  <div class="arg">
     <div class="cards_3">
-      <%= cl_image_tag @legend.photos.last.key %>
+      <%= cl_image_tag @legend.photos.last.key, class: "card-image" %>
     </div>
 
 <%# redimensionner les images des cards %>
 
-    <div class="cards_2">
+ <div class="cards_2">
       <div class="cards_2_trips">
-        <h2><%= @legend.name %></h2>
+        <h2><%= @legend.name %> </h2>
         <hr>
         <p><%= @legend.description %></p>
         <hr>
         <p><%= @legend.price %>€/jour</p>
         <hr>
-        <p><%= @legend.category %></p>
+        <p><%= @legend.category  %> </p>
+        <hr>
       </div>
-      <%= link_to "Back to the list", legends_path %>
-      <div>
-        <% @legend.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-        <h2><%= @legend.name %></h2>
-        <p><%= @legend.description %></p>
-        <p><%= @legend.price %>€/jour</p>
-        <p><%= @legend.category %></p>
+      <div class = "btn-gradient">
+        <%= link_to "Back to the list", legends_path  %>
       </div>
-    </div>
-<%# voir si on fait la navbar %>
 
-<%# faire la barre de recherche %>
-
-    <div>
-      <div class="cards_3">
-        <img src="" alt="">
       </div>
+  </div>
+
       <%# completer avec la photo et ajuster sur card_show_legend %>
 
-      <div class="cards_2">
-        <div class="cards_2_trips">
-          <h2><%= @legend.name %></h2>
-          <p><%= @legend.description %></p>
-          <p><%= @legend.price %>€/jour</p>
-          <p><%= @legend.category %></p>
-        </div>
-      </div>
-
-
-      <%# coller un stickit dessus afni quelle suive le mouvement de la page %>
+      <%# coller un stickit dessus afin quelle suive le mouvement de la page  %>
       <div class="card-trip" data-controller="total-resa" data-price = "<%=@legend.price %>">
         <div class="card-trip-infos">
           <%= simple_form_for @reservation do |f| %>
@@ -59,22 +37,19 @@
               <%= f.hidden_field :legend_id, value: @legend.id %>
           <p data-total-resa-target="total"></p><br>
             </div>
-              <div class="form-actions" id="btn-gradient">
-              <%= f.button :submit, "Book !" %>
+              <div class="form-actions" id="btn-gradient" >
+              <%= f.button :submit, "Book !"%>
             </div>
-            <div id="warning">Attention : l’app n’est pas responsable juridiquement en cas de destruction d’immeuble ou de l’univers.  </div>
+            <div id="warning">Attention : l’application n’est pas juridiquement responsable en cas de destruction d’immeuble ou de l’univers.  </div>
           <% end %>
         </div>
         </div>
       </div>
-
     </div>
+  </div>
+</div>
 
-<%# voir ce que vont devenir le bouton delete et le bouton retour %>
-<%# <%= link_to "Back to the list", legends_path %>
 <%# <p><%= link_to "Delete", %>
 <%# legend_path(@legend), %>
 <%# data: {turbo_method: :delete, turbo_confirm: "Are you really really really sure ????"} %>
  <%# </p> %>
-  </div>
-</div>
