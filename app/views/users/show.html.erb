@@ -2,9 +2,9 @@
 
 
 <div class= "card-category header-dash">
-  <h1><%= @user.first_name.capitalize %> <%= @user.last_name.upcase %></h1>
-  <h2></h2>
-  <h3><%= @user.email %></h3>
+  <h1> TABLEAU DE BORD </h1>
+  <h2><%= @user.first_name.capitalize %> <%= @user.last_name.upcase %></h2>
+  <h4><%= @user.email %></h4>
 </div>
 
 <div class="container-md">
@@ -31,7 +31,6 @@
               <div class="btn-delete-dashboard">
                 <%= link_to legend_path(legend), data: {turbo_method: :delete, turbo_confirm: "Are you really really really sure ????"} do %>
                   <i class="fa-solid fa-trash" style="color: #000000;"></i>
-                  Delete
                 <% end %>
               </div>
             </div>
@@ -48,10 +47,14 @@
                 <p><%= reservation.legend.name %></p>
                 <p>Du <%= reservation.starting_date %> Au <%= reservation.ending_date %></p>
                 <% if reservation.status == "pending" %>
-                  <%= link_to "ok", update_status_reservation_path(reservation, reservation: {status: "confirmed"}), data:{turbo_method: :patch} %>
-                  <i class="fa-solid fa-check"></i>
-                  <%= link_to "Décliner", update_status_reservation_path(reservation, reservation: {status: "declined"}), data:{turbo_method: :patch} %>
-                  <i class="fa-solid fa-xmark" style="color: #ef0b0b;"></i>
+                  <div>
+                    <%= link_to update_status_reservation_path(reservation, reservation: {status: "confirmed"}), data:{turbo_method: :patch} do %>
+                      <i class="fa-solid fa-check"></i>
+                    <%end %>
+                    <%= link_to update_status_reservation_path(reservation, reservation: {status: "declined"}), data:{turbo_method: :patch} do %>
+                      <i class="fa-solid fa-xmark" style="color: #ef0b0b;"></i>
+                    <% end %>
+                  </div>
                 <% elsif reservation.status == "confirmed" %>
                   <p>Acceptée</p>
                 <% elsif reservation.status == "declined" %>

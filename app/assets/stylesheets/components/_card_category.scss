@@ -1,13 +1,13 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  background-color: bisque;
+  background-color: #FFD166;
   height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -123,11 +123,17 @@
 .header-dash {
   display: flex;
   flex-direction: column;
+  h1{
+    color: black;
+  }
 }
 
 .cards-resa-dashboard-infos{
   display: flex;
- 
+  border-radius: 20px;
+  box-shadow: (0px 0px 5px #FFD166);
+  margin-top: 1.5em;
+
   img {
     border-radius: 50%;
     width: 40px;
@@ -138,8 +144,8 @@
     margin: 0px
   }
 
-  :nth-child(-n + 3) {
-    display: flex;
-    flex-direction: column;
-  }
+  // :nth-child(-n + 3) {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
 }
