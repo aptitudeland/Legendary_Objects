@@ -1,0 +1,35 @@
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.fa-search {
+  color: #ffd166;
+  font-size: 35px;
+  padding-left: 3px;
+}
+
+#query {
+  min-width: 350px;
+}
+
+.search-button {
+  border: none;
+  background-color: white;
+}
+
+.messages-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(174, 170, 170);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 20px;
+  // margin-left: 240px;
+  p {
+    margin: 0;
+  }
+}

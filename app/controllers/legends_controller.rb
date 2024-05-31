@@ -4,6 +4,10 @@ class LegendsController < ApplicationController
 
   def index
     @legends = Legend.all
+    if params[:query].present?
+      sql_subquery = "name ILIKE :query OR category ILIKE :query"
+      @legends = @legends.where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def show

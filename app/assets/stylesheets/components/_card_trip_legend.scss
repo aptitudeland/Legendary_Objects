@@ -1,20 +1,23 @@
 .card-trip {
   overflow: hidden;
   background: white;
+  border: 1px solid #ffd166;
   box-shadow: 0 0 15px #ffd166;
   border-radius: 20px;
   width: 250PX;
   height: 402PX;
   float: right;
   text-align: center;
-  margin-right: 100px;
-  margin-top:100px;
   position: sticky;
-  top:20PX;
+  top:20px;
+  margin-top: 4rem;
+  margin-left: 5rem;
 }
 
+
+
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 1.3rem;
   font-weight: bold;
   margin: 0;
   color: #031882
@@ -39,7 +42,7 @@
   width: 120px;
   height: 55px;
   text-align: center;
-  margin-left: 21px;
+  margin: auto;
 }
 
 .btn-gradient:hover {
@@ -55,11 +58,6 @@
 }
 
 .card-trip .card-trip-infos {
-  padding: 25PX;
+  padding: 20PX;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-  width: 85%;
-  margin-left: 15px;
 }
