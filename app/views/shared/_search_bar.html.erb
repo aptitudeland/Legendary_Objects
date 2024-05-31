@@ -1,15 +1,14 @@
-<%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-       <%#<input class="form-control string required" type="text" name="search[query]" placeholder = "Que voulez-vous aujourd'hui?" id="search_query"/>
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i>
-        </button> %>
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: legends_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Chercher un objet legend..."
         %>
-      <i class="fas fa-search" data-controller="search-button"></i>
-    </div>
+      <button type="submit" class="search-button">
+        <i class="fas fa-search"></i>
+      </button>
     <% end %>
-<%#<%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+  </div>
+</div>
