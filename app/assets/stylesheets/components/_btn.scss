@@ -18,13 +18,15 @@
 }
 
 .btn-delete-dashboard {
-  display: flex;
-  justify-content: center;
-  background-color: antiquewhite;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  margin-right: 20px;
+  /* margin-right: 20px; */
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: end;
+  margin-left: 95%;
+
   a {
     text-decoration: none;
     color: black;
