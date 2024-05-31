@@ -23,7 +23,11 @@
 
 .navbar-middle h2 {
   margin-bottom: 0;
-}
+  font-family: "Great Vibes", cursive;
+  font-weight: bold;
+  font-style: normal;
+  box-shadow: 0 0 15px #ffc65a;
+  }
 .navbar-right {
   width: 300px;
   display: flex;
@@ -32,21 +36,23 @@
 }
 
 .put-on-rent {
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 3px;
-  border-color: blue;
   padding:4px 8px;
   &:hover {
-    background-color: darkblue;
+    background-color: #ffc65a;
     color: white;
   }
 }
 
 .put-on-rent a {
     text-decoration: none;
+    color: #ffc65a;
+    font-size: 18px;
   }
 
   .fa-solid {
     color: #ffc65a;
+  }
+
+  .home-button {
+    font-size: 30px;
   }

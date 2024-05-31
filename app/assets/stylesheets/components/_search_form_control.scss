@@ -1,9 +1,12 @@
 // j'ai utlisé le kitt UI du wagon search form, il faut completer avec HTML et ERB
 
 
-.search-form-control {
+/*.search-form-control {
   position: relative;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
+
 }
 
 .search-form-control .btn {
@@ -24,8 +27,28 @@
   border: 1px solid #E7E7E7;
 }
 
-.search-form-control .form-control:focus {
+/*.search-form-control .form-control:focus {
   border: 1px solid #1EDD88;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+} */
+
+.fa-search {
+  color: #ffd166;
+  font-size: 35px;
+  padding-left: 3px;
+}
+
+/*.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}*/
+
+
+.search-button {
+  border: none;
+  background-color: white;
 }
