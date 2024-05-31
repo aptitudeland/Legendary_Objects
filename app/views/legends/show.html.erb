@@ -4,8 +4,8 @@
 
 <div class="main-container">
   <div class="card_object">
-        <div class = "btn-gradient">
-        <%= link_to "Retour", legends_path  %>
+      <div class="card_info">
+        <h2><%= @legend.name %> </h2>
       </div>
     <div class="card_image">
       <%= cl_image_tag @legend.photos.last.key, class: "image" %>
@@ -15,14 +15,11 @@
 
  <div class="card_info">
       <div class="cards_2_trips">
-        <h2><%= @legend.name %> </h2>
-        <hr>
         <p><%= @legend.description %></p>
-        <hr>
-        <p><%= @legend.price %>€/jour</p>
-        <hr>
+        <br>
         <p><%= @legend.category  %> </p>
-        <hr>
+        <p><%= @legend.price %> €/jour</p>
+
 
       </div>
 

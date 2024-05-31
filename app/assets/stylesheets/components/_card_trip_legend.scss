@@ -1,6 +1,7 @@
 .card-trip {
   overflow: hidden;
   background: white;
+  border: 1px solid #ffd166;
   box-shadow: 0 0 15px #ffd166;
   border-radius: 20px;
   width: 250PX;
@@ -9,7 +10,7 @@
   text-align: center;
   position: sticky;
   top:20px;
-  margin-top: 6rem;
+  margin-top: 4rem;
   margin-left: 5rem;
 }
 

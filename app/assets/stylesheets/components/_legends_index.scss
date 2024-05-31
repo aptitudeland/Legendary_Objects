@@ -19,7 +19,6 @@
 
 .legends-index-card-single {
   overflow: hidden;
-  background: white;
   flex-direction: column;
   display: flex;
   align-items:normal;
@@ -32,7 +31,7 @@
     width: 100%;    /* Deactivate this line to display square photos */
     object-fit:cover;
     border-radius: 20px;
-    // border: 1px solid #dddddd;
+    border: 1px solid #ffd166;
     box-shadow: 0 0 15px #ffd166;
 
   }
