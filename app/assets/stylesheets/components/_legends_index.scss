@@ -1,11 +1,20 @@
 .legends-index-main-container {
-  // margin: 1em;
+  // margin: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ::after {
+    content: "";
+    flex: auto;
+  }
 }
 
 .legends-index-cards-container {
+  width: 90%;
+  // margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .legends-index-card-single {
@@ -24,7 +33,8 @@
     object-fit:cover;
     border-radius: 20px;
     // border: 1px solid #dddddd;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 0 0 15px #ffd166;
+
   }
 
   h2 {
