@@ -1,6 +1,6 @@
-<h1> Mettez votre objet sur Legendary Object</h1>
+<h1 class= "modification-titre-add"> Mettez votre objet sur Legendary Object</h1>
 
-
+<div id="object_card">
 <%= simple_form_for(@legend) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
@@ -9,5 +9,6 @@
   <%= f.input :category, as: :select, collection: categories %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
-<% end %>
 
+<% end %>
+</div>
