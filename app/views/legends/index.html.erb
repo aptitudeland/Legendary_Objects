@@ -1,14 +1,14 @@
-<div class="legends-index-main-container">
-  <div>
-    <%= render "shared/search_bar" %>
-  </div>
+<div class="search-bar-container">
+  <%= render "shared/search_bar" %>
+</div>
 
-  <% if @legends == [] %>
-    <div class="messages-search">
-      <p>Désolé, aucun objet de légende ne correspond à votre recherche.</p>
-      <p>Essayez à nouveau.</p>
-    </div>
-  <% else %>
+<% if @legends == [] %>
+  <div class="messages-search">
+  <p>Désolé, aucun objet de légende ne correspond à votre recherche.</p>
+  <p>Essayez à nouveau.</p>
+</div>
+<% else %>
+  <div class="legends-index-main-container">
     <div class="legends-index-cards-container">
       <% @legends.each do |legend| %>
         <%= link_to legend_path(legend), class: "legends-index-card-single" do %>
@@ -25,5 +25,5 @@
         <% end %>
       <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
