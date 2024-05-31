@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  border-bottom: solid 0.5px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -27,6 +28,7 @@
   font-weight: bold;
   font-style: normal;
   box-shadow: 0 0 15px #ffc65a;
+  padding: 8px 12px;
   }
 .navbar-right {
   width: 300px;
