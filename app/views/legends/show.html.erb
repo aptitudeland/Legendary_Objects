@@ -1,12 +1,15 @@
 <div class="main-container">
-  <div class="arg">
-    <div class="cards_3">
-      <%= cl_image_tag @legend.photos.last.key, class: "card-image" %>
+  <div class="card_object">
+        <div class = "btn-gradient">
+        <%= link_to "Back to the list", legends_path  %>
+      </div>
+    <div class="card_image">
+      <%= cl_image_tag @legend.photos.last.key, class: "image" %>
     </div>
 
 <%# redimensionner les images des cards %>
 
- <div class="cards_2">
+ <div class="card_info">
       <div class="cards_2_trips">
         <h2><%= @legend.name %> </h2>
         <hr>
@@ -16,9 +19,7 @@
         <hr>
         <p><%= @legend.category  %> </p>
         <hr>
-      </div>
-      <div class = "btn-gradient">
-        <%= link_to "Back to the list", legends_path  %>
+
       </div>
 
       </div>
@@ -40,6 +41,7 @@
               <div class="form-actions" id="btn-gradient" >
               <%= f.button :submit, "Book !"%>
             </div>
+            <br>
             <div id="warning">Attention : l’application n’est pas juridiquement responsable en cas de destruction d’immeuble ou de l’univers.  </div>
           <% end %>
         </div>
