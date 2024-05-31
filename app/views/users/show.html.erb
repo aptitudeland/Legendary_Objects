@@ -75,7 +75,7 @@
                 <%= link_to legend_path(reservation.legend), class: "card-legends-dashboard" do %>
                 <%= cl_image_tag reservation.legend.photos.last.key, height: 300, width: 400, crop: :fill %>
                 <div class= "card-legends-index-infos">
-                  <h4><%= reservation.legend.name %> (Propriétaire : <%= reservation.legend.user.first_name %> <%= reservation.legend.user.last_name %>)</h4>
+                  <h4><%= reservation.legend.name %> (Propriétaire : <%= reservation.legend.user.first_name.capitalize %> <%= reservation.legend.user.last_name.capitalize %>)</h4>
                   <p> Demande du <%= reservation.starting_date %></p>
                   <p>au <%= reservation.ending_date %></p>
                   <% if reservation.status == "pending" %>
