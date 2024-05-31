@@ -48,14 +48,16 @@
                 <p><%= reservation.legend.name %></p>
                 <p>Du <%= reservation.starting_date %> Au <%= reservation.ending_date %></p>
                 <% if reservation.status == "pending" %>
-                  <%= link_to "Ok", update_status_reservation_path(reservation, reservation: {status: "confirmed"}), data:{turbo_method: :patch} %>
+                  <%= link_to "ok", update_status_reservation_path(reservation, reservation: {status: "confirmed"}), data:{turbo_method: :patch} %>
+                  <i class="fa-solid fa-check"></i>
                   <%= link_to "Décliner", update_status_reservation_path(reservation, reservation: {status: "declined"}), data:{turbo_method: :patch} %>
+                  <i class="fa-solid fa-xmark" style="color: #ef0b0b;"></i>
                 <% elsif reservation.status == "confirmed" %>
-                  Acceptée
+                  <p>Acceptée</p>
                 <% elsif reservation.status == "declined" %>
-                  Déclinée
+                  <p>Déclinée</p>
                 <% elsif reservation.status == "canceled" %>
-                  Annulée
+                  <p>Annulée</p>
                 <% end %>
               </div>
             <% end %>
@@ -78,17 +80,16 @@
                 <%= link_to legend_path(reservation.legend), class: "card-legends-dashboard" do %>
                 <%= cl_image_tag reservation.legend.photos.last.key, height: 300, width: 400, crop: :fill %>
                 <div class= "card-legends-index-infos">
-                  <h4><%= reservation.legend.name %> (Propriétaire : <%= reservation.legend.user.first_name %> <%= reservation.legend.user.last_name %>)</h4>
-                  <p> Demande du <%= reservation.starting_date %></p>
-                  <p>au <%= reservation.ending_date %></p>
+                  <h2><%= reservation.legend.name %> (Propriétaire : <%= reservation.legend.user.first_name.capitalize %> <%= reservation.legend.user.last_name.capitalize %>)</h2>
+                  <p> Demande du <%= reservation.starting_date %> au <%= reservation.ending_date %></p>
                   <% if reservation.status == "pending" %>
-                  En attente
+                  <p>Votre demande est : En attente</p>
                   <% elsif reservation.status == "confirmed" %>
-                  Acceptée
+                  <p>Votre demande est : Acceptée </p>
                   <% elsif reservation.status == "declined" %>
-                  Déclinée
+                  <p>Votre demande est : Refusée </p>
                   <% elsif reservation.status == "canceled" %>
-                  Annulée
+                  <p>Votre demande est : Annulée </p>
                 <% end %>
                 </div>
                 <% end %>
