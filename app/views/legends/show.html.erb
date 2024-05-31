@@ -1,7 +1,11 @@
+<div>
+  <%= render "shared/search_bar" %>
+</div>
+
 <div class="main-container">
   <div class="card_object">
         <div class = "btn-gradient">
-        <%= link_to "Back to the list", legends_path  %>
+        <%= link_to "Retour", legends_path  %>
       </div>
     <div class="card_image">
       <%= cl_image_tag @legend.photos.last.key, class: "image" %>
