@@ -42,7 +42,7 @@
   width: 120px;
   height: 55px;
   text-align: center;
-  margin-left: 21px;
+  margin: auto;
 }
 
 .btn-gradient:hover {
@@ -58,11 +58,6 @@
 }
 
 .card-trip .card-trip-infos {
-  padding: 25PX;
+  padding: 20PX;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-  width: 85%;
-  margin-left: 15px;
 }
