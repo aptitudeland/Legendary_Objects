@@ -1,0 +1,62 @@
+// .card_image {
+//   display: flex;
+//   contain: size;
+//   text-shadow: 0 0 10px;
+//   border-radius: 20px;
+//   overflow: hidden;
+//   width: 650px;
+//   height: 500px;
+//   box-shadow: 0 0 15px #ffd166;
+//   display: flex;
+//   align-items: center;
+//   max-width: 600px;
+// }
+.image {
+  // max-height: 500px;
+  // max-width: 600px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #ffd166;
+margin-bottom: 2em;
+}
+
+.card_info {
+  overflow: hidden;
+  float: left;
+
+
+  h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: #031882;
+  padding-bottom: 25px;
+  }
+
+  p {
+  font-size:20px;
+  opacity: .7;
+  margin: 0;
+  color: #031882
+  }
+
+  card_2_trips {
+  padding: 25PX;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card_object{
+  flex-grow:1;
+  max-width: 800px;
+}

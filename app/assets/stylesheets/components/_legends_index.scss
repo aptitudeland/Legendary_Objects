@@ -1,0 +1,67 @@
+.legends-index-main-container {
+  // margin: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  ::after {
+    content: "";
+    flex: auto;
+  }
+}
+
+.legends-index-cards-container {
+  width: 90%;
+  // margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.legends-index-card-single {
+  overflow: hidden;
+  background: white;
+  flex-direction: column;
+  display: flex;
+  align-items:normal;
+  text-decoration: none;
+  color: inherit;
+  padding: 1em;
+  margin-bottom: 1em;
+
+  img {
+    width: 100%;    /* Deactivate this line to display square photos */
+    object-fit:cover;
+    border-radius: 20px;
+    // border: 1px solid #dddddd;
+    box-shadow: 0 0 15px #ffd166;
+
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .legends-index-card-single-infos {
+    padding-top: 16px;  }
+
+  .legends-index-card a:hover {
+    color: #000; /* Optionally, change color on hover */
+  }
+
+  .legends-index-card a:visited {
+    color: inherit; /* Keep the original color when visited */
+  }
+
+  .legends-index-card:hover {
+    background-color: #f0f0f0; /* or any highlight color */
+  }
+}

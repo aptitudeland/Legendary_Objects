@@ -1,29 +1,29 @@
-<div>
-
-</div>
-<div>
-  <%= render "shared/search_bar" %>
-</div>
-
-<% if @legends == [] %>
-  <div class="messages-search">
-  <p>Désolé, aucun objet de légende ne correspond à votre recherche.</p>
-  <p>Essayez à nouveau.</p>
+<div class="legends-index-main-container">
+  <div>
+    <%= render "shared/search_bar" %>
   </div>
-<% else %>
-  <div class="cards-legend-container">
+
+  <% if @legends == [] %>
+    <div class="messages-search">
+      <p>Désolé, aucun objet de légende ne correspond à votre recherche.</p>
+      <p>Essayez à nouveau.</p>
+    </div>
+  <% else %>
+    <div class="legends-index-cards-container">
       <% @legends.each do |legend| %>
-      <%= link_to legend_path(legend), class: "card-legends-index" do %>
-        <%= cl_image_tag legend.photos.last.key, height: 300, width: 400, crop: :fill %>
-        <div class="card-legends-index-infos">
-          <h2><%= legend.name %></h2>
-          <p>
-            <%= legend.category %> <br>
-            <%= legend.price %> $/day
-          </p>
-        </div>
-        <br>
+        <%= link_to legend_path(legend), class: "legends-index-card-single" do %>
+          <div class="legends-index-img-div">
+            <%= cl_image_tag legend.photos.last.key, height: 250, width: 250 %>
+          </div>
+          <div class="legends-index-card-single-infos">
+            <h2><%= legend.name %></h2>
+            <p>
+              <%= legend.category %> <br>
+              <%= legend.price %> €/jour
+            </p>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-<% end %>
+    </div>
+  <% end %>
+</div>

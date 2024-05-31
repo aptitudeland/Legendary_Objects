@@ -3,18 +3,27 @@
   background: white;
   box-shadow: 0 0 15px #ffd166;
   border-radius: 20px;
-// regler la taille de la carte div afin que la card prenne 1vh de l'ecran
+  width: 250PX;
+  height: 402PX;
+  float: right;
+  text-align: center;
+  position: sticky;
+  top:20px;
+  margin-top: 6rem;
+  margin-left: 5rem;
 }
 
+
+
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 1.3rem;
   font-weight: bold;
   margin: 0;
   color: #031882
 }
 
 .card-trip p {
-  font-size: 12px;
+  // font-size: 24px;
   opacity: .7;
   margin: 0;
   color: #031882
@@ -29,6 +38,10 @@
   background: #ffd166;
   transition: background 0.3s ease;
   border: 1px solid #ffd166;
+  width: 120px;
+  height: 55px;
+  text-align: center;
+  margin-left: 21px;
 }
 
 .btn-gradient:hover {
@@ -44,9 +57,11 @@
 }
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 25PX;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  width: 85%;
+  margin-left: 15px;
 }

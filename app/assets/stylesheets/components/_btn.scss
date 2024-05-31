@@ -2,13 +2,24 @@
 // il doit etre adapté a lendroit ou on doit le mettre
 
 .btn-gradient {
-  color: white;
+
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
   background: #ffd166;
   transition: background 0.3s ease;
   border: 1px solid #ffd166;
+  width: 161px;
+  margin-bottom: 2em;
+
+  a:visited {
+    color: inherit;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
 }
 
 .btn-gradient:hover {
